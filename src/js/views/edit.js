@@ -16,6 +16,10 @@ export const Edit = () => {
 	}, [])
 
 	const modifyContacts = async () => {
+		event.preventDefault(); // the event.preventDefault() slows down the PUT fetch and allows the information to reach the GET fetch. It also allow us to see the results of the console.logs below (without it it's too quick and they disappear from the console!)
+		console.log(editContact);
+		console.log(params.theid);
+
 		const response = await fetch("https://assets.breatheco.de/apis/fake/contact/" + params.theid, {
 			method: "PUT",
 			headers: {
@@ -38,7 +42,7 @@ export const Edit = () => {
 	return (
 		<div className="container">
 			<h1 className="text-center">Edit contact</h1>
-			<form>
+			<form >
 				<div className="mb-3">
 					<label htmlFor="full_name" className="form-label">Full Name</label>
 					<input className="form-control" placeholder="Full Name" id="full_name" aria-describedby="full_name" value={editContact.full_name} onChange={(e) => setEditContact({ ...editContact, full_name: e.target.value })} />

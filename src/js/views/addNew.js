@@ -51,7 +51,7 @@ export const AddNew = () => {
 				</div>
 				<div className="row">
 					<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-3">
-						<button type="submit" className="btn btn-primary w-100" onClick={() => createNewContact()}>Save</button>
+						<button type="submit" className="btn btn-primary w-100">Save</button>
 					</div>
 				</div>
 			</form>
